@@ -1,13 +1,9 @@
 $script = <<SCRIPT
-  # See http://craig-russell.co.uk/2012/05/08/install-r-on-ubuntu.html#.UyHZEuddXks
-  sudo gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
-  sudo gpg -a --export E084DAB9 | sudo apt-key add -
-
-  echo "deb http://cran.fhcrc.org/bin/linux/ubuntu precise/" | sudo tee -a /etc/apt/sources.list
+  # Update software repository on Ubuntu
   sudo apt-get -y update
 
-  # Install pandoc, texlive, and git
-  sudo apt-get install -y pandoc texlive git
+  # Install git
+  sudo apt-get install -y git
 
   # Download the Git repository that contains analysis scripts/code
   git clone https://github.com/srp33/Makedown_code.git
@@ -19,6 +15,9 @@ $script = <<SCRIPT
 
   # Update permissions on .git directory so it can be updated
   sudo chmod 777 .git -R
+
+  # Install software and dependencies
+  ./install
 
   # Create directory that will be shared between host and guest operating systems
   mkdir -pv Notebooks
