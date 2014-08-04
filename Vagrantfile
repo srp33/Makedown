@@ -10,12 +10,12 @@ $script = <<SCRIPT
   sudo apt-get install -y pandoc texlive git
 
   # Download the Git repository that contains analysis scripts/code
-  git clone https://github.com/srp33/Makedown.git
+  git clone https://github.com/srp33/Makedown_code.git
 
   # Move the analysis files to the home directory
-  mv Makedown/* .
-  mv Makedown/.git* .
-  rm -rf Makedown
+  mv Makedown_code/* .
+  mv Makedown_code/.git* .
+  rm -rf Makedown_code
 
   # Update permissions on .git directory so it can be updated
   sudo chmod 777 .git -R
