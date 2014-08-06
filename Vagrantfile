@@ -26,6 +26,7 @@ SCRIPT
 # https://docs.vagrantup.com for details about the settings below
 Vagrant.configure("2") do |config|
   config.vm.box = "trusty64"
+  # From https://vagrantcloud.com/ubuntu/trusty64/version/1
   config.vm.box_url = "https://vagrantcloud.com/ubuntu/trusty64/version/1/provider/virtualbox.box"
   config.vm.provision :shell, :inline => $script
 
